@@ -6,7 +6,7 @@ RSpec.describe "check_codeword method" do
     expect(result).to eq "WRONG!"
   end
 
-  it "returns a close message if codeword's first character is 'h' and last character is 'e" do
+  it "returns a close message if codeword's first character is 'h' and last character is 'e'" do
     result = check_codeword("house")
     expect(result).to eq "Close, but nope."
   end
