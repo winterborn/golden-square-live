@@ -1,4 +1,4 @@
-require "make_snippeet"
+require "make_snippet"
 
 RSpec.describe "make_snippet method" do
   it "if given an empty string, returns empty string" do

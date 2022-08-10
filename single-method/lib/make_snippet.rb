@@ -8,6 +8,14 @@ def make_snippet(str)
   else
     return ""
   end
+
+  # indiv_words = str.split(" ")
+  # if indiv_words.length <= 5
+  #   return str
+  # else
+  #   after_5 = indiv_words[0, 5].join(" ")
+  #   return after_5 + "..."
+  # end
 end
 
 # p make_snippet("This is the best day of my life")
