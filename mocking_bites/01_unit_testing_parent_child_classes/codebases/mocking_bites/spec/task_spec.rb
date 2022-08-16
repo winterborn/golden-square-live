@@ -1,0 +1,21 @@
+require "task"
+
+RSpec.describe Task do
+  it "constructs" do
+    task = Task.new("Walk the dog")
+    expect(task.title).to eq "Walk the dog"
+  end
+
+  it "can be marked as complete" do
+    task = Task.new("Walk the dog")
+    task.mark_complete
+    expect(task.complete?).to eq true
+  end
+  it "can return true or false if all tasks are completed" do
+    task_1 = Task.new("Make dinner")
+    task_2 = Task.new("Complete coding")
+    task_1.mark_complete
+    expect(task_1.complete?).to eq true
+    expect(task_2.complete?).to eq false
+  end
+end
