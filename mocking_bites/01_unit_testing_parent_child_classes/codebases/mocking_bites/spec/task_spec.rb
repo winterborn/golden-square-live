@@ -11,7 +11,8 @@ RSpec.describe Task do
     task.mark_complete
     expect(task.complete?).to eq true
   end
-  it "can return true or false if all tasks are completed" do
+
+  it "shows incomplete tasks as false, complete tasks as true" do
     task_1 = Task.new("Make dinner")
     task_2 = Task.new("Complete coding")
     task_1.mark_complete
