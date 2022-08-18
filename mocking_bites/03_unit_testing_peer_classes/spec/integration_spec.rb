@@ -33,6 +33,7 @@ RSpec.describe "Integration" do
     it "fails if diary is locked" do
       diary = Diary.new("Wednesday afternoon it rained in London.")
       secret_diary = SecretDiary.new(diary)
+      secret_diary.lock
       expect { secret_diary.read }.to raise_error "Go away!"
     end
 
