@@ -1,22 +1,23 @@
 require "json"
-require "net/http"
 
 class StarWarsQuote
+  def initialize(request)
+    @request = request
+  end
+
   def provide
-    return "Star Wars Quote: #{get_sw_quote["content"]}"
+    return "#{get_sw_quote["opening_crawl"]}"
   end
 
   private
 
   def get_sw_quote
-    text_response =
-      Net::HTTP.get(
-        "http://swquotesapi.digitaljedi.dk/api/SWQuote/RandomStarWarsQuote#"
-      )
+    text_response = @request.get(URI("https://swapi.dev/api/films/6/"))
     return JSON.parse(text_response)
   end
 end
 
 # Run:
-star_wars_quote = StarWarsQuote.new
-p star_wars_quote.provide
+# require "net/http"
+# star_wars_quote = StarWarsQuote.new(Net::HTTP)
+# p star_wars_quote.provide
